@@ -6,7 +6,12 @@
 var express = require('express'); // Do Not Edit
 var app = express();              // Do Not Edit
 var helmet = require('helmet');
-const { hidePoweredBy, frameguard, xssFilter } = helmet
+const { 
+  hidePoweredBy, 
+  frameguard, 
+  xssFilter,
+  noSniff 
+} = helmet
 // ----
 
 /** - Challenges - *
@@ -21,7 +26,8 @@ const { hidePoweredBy, frameguard, xssFilter } = helmet
 app.use(
   hidePoweredBy({ setTo: 'PHP 4.2.0' }),
   frameguard({ action: 'deny' }),
-  xssFilter()
+  xssFilter(),
+  noSniff()
 )
 
 
