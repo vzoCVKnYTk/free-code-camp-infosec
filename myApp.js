@@ -20,7 +20,8 @@ const { hidePoweredBy, frameguard } = helmet
 
 app.use(
   hidePoweredBy({ setTo: 'PHP 4.2.0' }),
-  frameguard({ action: 'deny' })
+  frameguard({ action: 'deny' }),
+  xssFilter()
 )
 
 
